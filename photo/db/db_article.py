@@ -50,6 +50,10 @@ class DBArticle(DB):
         _m = self.model.objects.filter(is_show = True)
         return self._pack_list( self._pack_dict,_m)
 
+    def addLike(self,article_id):
+        _m = self.model.objects.get(id = article_id)
+        _m.like_count = _m.like_count + 1
+        _m.save()
 
 
 

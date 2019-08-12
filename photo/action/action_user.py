@@ -70,6 +70,7 @@ class ActionUser():
         if db.like.is_repeat( user_id , article_id) is True:
             return False
         else:
+            db.article.addLike(article_id) #增加赞
             db.like.add(user_id = user_id , article_id = article_id)
             return True
 
