@@ -118,7 +118,7 @@ class ArticleGetRule(ListView):
             <section style="padding: 0px; font-size: 16px; color: inherit; height: 8px; margin: -8px 4% 0px; background-color: #fefefe; box-sizing: border-box;"></section>
             <section class="135brush" data-style="text-align:justify" style="padding: 0px; line-height: 2em; color: #3e3e3e; font-size: 14px; margin: 15px 10px; box-sizing: border-box;">
                 <p style="text-align:justify;" align="justify">
-                    <span style="color: #d32a63;"><strong style="caret-color: red;"><span style="caret-color: red;">1.</span></strong></span><strong style="caret-color: red;"><span style="caret-color: red;">&nbsp;</span></strong><span style="caret-color: red;">选择<strong>【我的照片】</strong>菜单，点击“<strong>【拍照】</strong>”，图标上传您在南宁方特拍摄的夜景作品，并添加联系方式登录提交，即视为投稿成功。</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <span style="color: #d32a63;"><strong style="caret-color: red;"><span style="caret-color: red;">1.</span></strong></span><strong style="caret-color: red;"><span style="caret-color: red;">&nbsp;</span></strong><span style="caret-color: red;">选择<strong>【我的照片】</strong>菜单，点击“<strong>【拍照】</strong>”图标上传您在南宁方特拍摄的夜景作品，并添加联系方式登录提交，即视为投稿成功。</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 </p>
                 <p>
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

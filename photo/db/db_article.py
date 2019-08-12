@@ -10,13 +10,19 @@ class DBArticle(DB):
     # 基础的查询数据
     def _pack_dict(self,object):
         _base = super()._pack_dict(object)
+
+        if object.tag_id == 2:
+            cover =  "%s?imageView2/2/w/750" % ( object.cover )
+        else:
+            cover = object.cover
+
         _new = {
             # "poi_id":object.poi_id,
             # "type":object.type,
 
             "tag_id":object.tag_id ,
             
-            "cover":object.cover ,
+            "cover":cover,
             "title":object.title,
             "summary":object.summary,
             "description":object.description,

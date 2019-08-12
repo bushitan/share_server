@@ -36,7 +36,7 @@ class Message():
     def user_none(self):
         return {'code':self.USER_NONE,'title':u"用户不存在" , 'content':u''}
     def user_add_success(self):
-        return {'code':self.USER_ADD_SUCCESS,'title':u"上传成功" , 'content':u''}
+        return {'code':self.USER_ADD_SUCCESS,'title':u"投稿成功" , 'content':u'请及时填写联系方式，以便作品选中后与您联系'}
     def user_add_full(self):
         return {'code':self.USER_ADD_FULL,'title':u"用户上传满了" , 'content':u'仅能上传%s张照片' % (USER_MAX_UPLOAD_COUNT)}
     def user_check_success(self):

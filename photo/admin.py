@@ -41,11 +41,29 @@ admin.site.register(User,UserAdmin)
 
 
 class GalleryAdmin(BaseAdmin):
-	list_display = ('id','user','photo','is_star',)
+	list_display = ['id','user','get_name','get_phone','logo_image','is_star',]
     # fieldsets = (
     #     (u"关系", {'fields': ['store','customer',]}),
     # )
 	search_fields = ('id',)
+	def get_name(self, obj):
+		return obj.user.name
+	get_name.short_description = '用户名称'
+	def get_phone(self, obj):
+		return obj.user.phone
+	get_phone.short_description = '用户电话'
+	# 分享二维码的展示图片
+	def logo_image(self, obj):
+		if obj.photo.url is not None:
+			return  mark_safe('<img src="%s?imageView2/1/w/96/h/96" name="%s" width="50px"  onclick="javascript:window.open(this.name)"/>' % (obj.photo.url,obj.photo.url))
+		else:
+			return  mark_safe('<img src="" width="50px" />' )
+	logo_image.short_description = u'上传图片'
+	logo_image.allow_tags = True
+	list_editable = ("is_star",)
+	list_filter = ("is_star",)
+	readonly_fields = ("get_name","get_phone","logo_image",)
+
 admin.site.register(Gallery,GalleryAdmin)
 
 

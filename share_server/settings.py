@@ -1,3 +1,5 @@
+#coding:utf-8
+
 """
 Django settings for share_server project.
 
@@ -40,6 +42,7 @@ INSTALLED_APPS = (
     'photo',
 )
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -73,7 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'share_server.wsgi.application'
 
 
-# TODO 1 logÎÄ¼şµØÖ·
+# TODO 1 logæ–‡ä»¶åœ°å€
 # LOG_FILE = "./all.log"
 LOG_FILE = r"C:\server\log\share_sever_v1_2_1.log"
 
@@ -134,12 +137,12 @@ LOGGING = {
 }
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-# TODO 2 ÒÔshare_sever + git°æ±¾
+# TODO 2 ä»¥share_sever + gitç‰ˆæœ¬
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'share_server_dev',  # ÄÚ²â»·¾³ÔËĞĞ
-        'NAME': 'share_sever_v1_2_1',  # ÄÚ²â»·¾³ÔËĞĞ
+        # 'NAME': 'share_server_dev',  # å†…æµ‹ç¯å¢ƒè¿è¡Œ
+        'NAME': 'share_sever_v1_2_1',  # å†…æµ‹ç¯å¢ƒè¿è¡Œ
         'USER': 'root',
         'PASSWORD':'root',
         'HOST':'127.0.0.1',
@@ -160,19 +163,20 @@ USE_I18N = True
 
 USE_L10N = True
 
-# USE_TZ = False #¼ÆËã»úËùÔÚµØÊ±¼ä#
-USE_TZ = True #¼ÆËã»úËùÔÚµØÊ±¼ä#
+# USE_TZ = False #è®¡ç®—æœºæ‰€åœ¨åœ°æ—¶é—´#
+USE_TZ = True #è®¡ç®—æœºæ‰€åœ¨åœ°æ—¶é—´#
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-# TODO 3  ÒÔdev + ÈÕÆÚ£¬ÀıÈç£ºdev20190611 ×÷Îª±àºÅ£¬Çø·Ö·şÎñÆ÷°æ±¾ºÅ
+# TODO 3  ä»¥dev + æ—¥æœŸï¼Œä¾‹å¦‚ï¼šdev20190611 ä½œä¸ºç¼–å·ï¼ŒåŒºåˆ†æœåŠ¡å™¨ç‰ˆæœ¬å·
 # ENV_URL = 'dev/' #
-# ENV_URL = 'share_photo_server_dev/' # ²âÊÔ°æ±¾
-ENV_URL = 'share_sever_v1_2_1/' # ²âÊÔ°æ±¾
+# ENV_URL = 'share_photo_server_dev/' # æµ‹è¯•ç‰ˆæœ¬
+ENV_URL = 'share_sever_v1_2_1/' # æµ‹è¯•ç‰ˆæœ¬
 
-STATIC_URL = '/static/' #¾²Ì¬ÎÄ¼ş£¬nginxÒÑ¾­¹Ì¶¨Ä¿Â¼£¬¿ÉÒÔ²»ĞèÒª¸ü¸Ä
+STATIC_URL = '/static/' #é™æ€æ–‡ä»¶ï¼Œnginxå·²ç»å›ºå®šç›®å½•ï¼Œå¯ä»¥ä¸éœ€è¦æ›´æ”¹
 # ENV_URL = ''
 MEDIA_ROOT = 'C:/server/'
 
 QINIU_HOST = 'http://img.12xiong.top/'
+
