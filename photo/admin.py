@@ -47,6 +47,7 @@ class GalleryAdmin(BaseAdmin):
     # )
 	search_fields = ('id',)
 	def get_name(self, obj):
+		# print(obj.user_id)
 		return obj.user.name
 	get_name.short_description = '用户名称'
 	def get_phone(self, obj):

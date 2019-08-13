@@ -251,9 +251,12 @@ class CustomerGetToken(ListView):
 class CustomerAddPhoto(ListView):
     @logged
     @detection.user
+    @detection.image_url_none
     def post(self, request, *args, **kwargs):
         user_id = kwargs['user_id']
         image_url = request.POST.get('image_url','')
+
+
         r = action.user.add_photo(user_id ,image_url)
         if r is True :
             m = message.user_add_success()

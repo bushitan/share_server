@@ -79,4 +79,17 @@ class Detection():
             return func(self,request,*args, **kwargs)
         return wrapper
 
+    # 图片上传为空
+    def image_url_none(self,func):
+        @Detection.base
+        def wrapper(self,request,*args, **kwargs):
+            image_url = request.POST.get('image_url',"")
+            if image_url == "":
+                 return {
+                    'message': message.user_customer_image_none()
+                }
+            return func(self,request,*args, **kwargs)
+        return wrapper
+
+
 detection = Detection()

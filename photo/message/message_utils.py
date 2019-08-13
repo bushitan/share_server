@@ -55,10 +55,15 @@ class Message():
         return {'code':self.USER_CUSTOMER_IS_HELP,'title':u"已助力" , 'content':u''}
 
 
+    CUSTOMER_IMAGE_NONE = "%s%s011" %(DIALOG,USER)  #登陆失败
+    def user_customer_image_none(self):
+        return {'code':self.CUSTOMER_IMAGE_NONE,'title':u"网络不稳定" , 'content':u'请重新上传图片'}
+
 
 
     ARTICLE_NONE = "%s%s002" %(DIALOG,ARTICLE)  #登陆失败
     def article_none(self):
         return {'code':self.ARTICLE_NONE,'title':u"文章不存在" , 'content':u''}
+
 
 message = Message()
