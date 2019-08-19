@@ -11,11 +11,14 @@ class DBArticle(DB):
     def _pack_dict(self,object):
         _base = super()._pack_dict(object)
 
+
+
         if object.tag_id == 2:
             cover =  "%s?imageView2/2/w/750" % ( object.cover )
         else:
             cover = object.cover
 
+        cover = cover.replace("https://www.51zfgx.com", "http://img.12xiong.top")
         _new = {
             # "poi_id":object.poi_id,
             # "type":object.type,

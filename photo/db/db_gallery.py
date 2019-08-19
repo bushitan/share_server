@@ -10,10 +10,12 @@ class DBGallery(DB):
     # 基础的查询数据
     def _pack_dict(self,object):
         # print ("store:", object.store , 'customer:' ,object.customer )
+        photo_url = object.photo.url if object.photo is not None else ""
+        photo_url = photo_url.replace("https://www.51zfgx.com", "http://img.12xiong.top")
         return {
             # "user_id":object.name,
             'gallery_id': object.id,
-            "photo_url":object.photo.url if object.photo is not None else "" ,
+            "photo_url": photo_url,
              "create_time":object.create_time.strftime("%Y-%m-%d %H:%M:%S"),
         }
 

@@ -48,15 +48,23 @@ class GalleryAdmin(BaseAdmin):
 	search_fields = ('id',)
 	def get_name(self, obj):
 		# print(obj.user_id)
-		return obj.user.name
+		if  obj.user is not None:
+			return  obj.user.name
+		else:
+			return ""
 	get_name.short_description = '用户名称'
 	def get_phone(self, obj):
-		return obj.user.phone
+		if  obj.user is not None:
+			return obj.user.phone
+		else:
+			return ""
 	get_phone.short_description = '用户电话'
 	# 分享二维码的展示图片
 	def logo_image(self, obj):
-		if obj.photo.url is not None:
-			return  mark_safe('<img src="%s?imageView2/1/w/96/h/96" name="%s" width="50px"  onclick="javascript:window.open(this.name)"/>' % (obj.photo.url,obj.photo.url))
+		if obj.photo is not None:
+			photo_url = obj.photo.url
+			photo_url = photo_url.replace("https://www.51zfgx.com", "http://img.12xiong.top")
+			return  mark_safe('<img src="%s?imageView2/1/w/96/h/96" name="%s" width="50px"  onclick="javascript:window.open(this.name)"/>' % (photo_url,photo_url))
 		else:
 			return  mark_safe('<img src="" width="50px" />' )
 	logo_image.short_description = u'上传图片'
@@ -133,7 +141,9 @@ class ArticleAdmin(BaseAdmin):
 	# 分享二维码的展示图片
 	def logo_image(self, obj):
 		if obj.author_logo is not None:
-			return  mark_safe('<img src="%s?imageView2/1/w/96/h/96" name="%s" width="50px"  onclick="javascript:window.open(this.name)"/>' % (obj.author_logo,obj.author_logo))
+			author_logo = obj.author_logo
+			author_logo = author_logo.replace("https://www.51zfgx.com", "http://img.12xiong.top")
+			return  mark_safe('<img src="%s?imageView2/1/w/96/h/96" name="%s" width="50px"  onclick="javascript:window.open(this.name)"/>' % (author_logo,author_logo))
 		else:
 			return  mark_safe('<img src="" width="50px" />' )
 	logo_image.short_description = u'作者头像'
