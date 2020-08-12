@@ -171,8 +171,8 @@ USE_TZ = False #计算机所在地时间#
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 # TODO 3  以dev + 日期，例如：dev20190611 作为编号，区分服务器版本号
 # ENV_URL = 'dev/' #
-ENV_URL = 'share_photo_server_dev/' # 测试版本
-# ENV_URL = 'share_sever_v1_2_1/' # 测试版本
+# ENV_URL = 'share_photo_server_dev/' # 测试版本
+ENV_URL = 'share_sever_v1_2_1/' # 测试版本
 
 STATIC_URL = '/static/' #静态文件，nginx已经固定目录，可以不需要更改
 # ENV_URL = ''

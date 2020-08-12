@@ -13,11 +13,11 @@ class DBArticle(DB):
 
 
 
-        if object.tag_id == 2:
-            cover =  "%s?imageView2/2/w/750" % ( object.cover )
-        else:
-            cover = object.cover
-
+        # if object.tag_id == 2:
+        #     cover =  "%s?imageView2/2/w/750" % ( object.cover )
+        # else:
+        #     cover = object.cover
+        cover = object.cover
         cover = cover.replace("https://www.51zfgx.com", "http://img.12xiong.top")
         _new = {
             # "poi_id":object.poi_id,

@@ -2,7 +2,7 @@
 from photo.db.db import DB
 from photo.models import *
 
-
+import datetime
 class DBLike(DB):
     def __init__(self):
         super().__init__(Like)
@@ -24,12 +24,12 @@ class DBLike(DB):
 
     #点赞列表
     def get_my_list(self,user_id):
-        _m = self.model.objects.filter(user_id = user_id)
+        _m = self.model.objects.filter(user_id = user_id,create_time__gte=datetime.datetime.now().date())
         return self._pack_list( self._pack_dict,_m)
 
     # 是否重复
     def is_repeat(self,user_id,article_id):
-        return self.model.objects.filter(user_id = user_id , article_id = article_id).exists()
+        return self.model.objects.filter(user_id = user_id , article_id = article_id , create_time__gte=datetime.datetime.now().date()).exists()
 
 
 

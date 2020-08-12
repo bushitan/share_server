@@ -313,6 +313,7 @@ class CustomerAddLike(ListView):
     def post(self, request, *args, **kwargs):
         user_id = kwargs['user_id']
         article_id = request.POST.get('article_id','')
+        # return {'message': message.sys_success()}  # success is f
         if action.user.add_like(user_id,article_id) is True:
             return {'message': message.sys_success()}
         else:
